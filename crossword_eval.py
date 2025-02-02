@@ -16,28 +16,23 @@ class WordEvaluation(BaseModel):
 GUIDED_JSON: Optional[Union[str, dict, BaseModel]] = WordEvaluation.model_json_schema()
 
 # ------------------------------------------------------------------------------
-# Import vllm and set up the offline inference model.
 from vllm import LLM, SamplingParams
 from vllm.sampling_params import GuidedDecodingParams
 
-# Create an LLM object. Replace "facebook/opt-125m" with your desired model.
-llm = LLM(model="Qwen/Qwen2.5-1.5B-Instruct")
-# Set sampling parameters; using a lower temperature for more consistent outputs.
-guided_decoding_params = GuidedDecodingParams(json=GUIDED_JSON)
+llm = LLM(model="microsoft/phi-4")
 
+guided_decoding_params = GuidedDecodingParams(json=GUIDED_JSON)
 sampling_params = SamplingParams(
-    temperature=0.2,
+    temperature=0,
     top_p=0.95,
     max_tokens=1024,
     guided_decoding=guided_decoding_params
 )
 
 # ------------------------------------------------------------------------------
-# Input and output filenames.
 INPUT_FILE = "wordlist.txt"
 OUTPUT_FILE = "results.csv"  # Each line will have: word;rating
 
-# A lock to protect file writes.
 file_lock = threading.Lock()
 
 def load_words(filename: str):
@@ -128,7 +123,7 @@ def main():
     print(f"Words left to process: {remaining}.")
 
     completed_count = initial_count
-    BATCH_SIZE = 32
+    BATCH_SIZE = 256
 
     # Process words in batches.
     for i in range(0, len(words_to_process), BATCH_SIZE):
