@@ -1,0 +1,20 @@
+Raw model output for 'MAINER':
+{
+  "word": "MAINTER",
+  "analysis": "The word 'MAINTER' is not a recognized English word. It appears to be a typo or a random string. Therefore, it does not fit well in a crossword puzzle grid.",
+  "rating": 10
+}
+
+Raw model output for 'LEGHORNS':
+{
+  "word": "LEGO",
+  "analysis": "LEGO is a well-known brand name associated with popular building block toys. It is a common and recognizable word, making it a good candidate for a crossword puzzle. It is interesting due to its association with creativity and play.",
+  "rating": 50
+}
+
+Raw model output for 'YOURIDEALWEIGHT':
+{
+  "word": "YOURIDEALWEALTH",
+  "analysis": "The word 'YOURIDEALWEALTH' is a compound word that is not commonly used in everyday language. It is specific and might be relevant in certain contexts, such as financial planning or personal finance discussions. However, its length and specificity make it less suitable for a general crossword puzzle grid. It is not a typo or random string, but its uncommon usage and length reduce its overall quality for a crossword puzzle.",
+  "rating": 20
+}
