@@ -5,6 +5,10 @@ Use vLLM offline batched inference to evaluate each word in a word list.
 
 Steps to run on a lambdalab instance (A100)
 
+## Wordlist
+
+The original wordlist (wordlist.txt) file was downloaded from [Crossword Nexus](https://crosswordnexus.com/)
+
 ## Install python 3.12.1 with pyenv
 
 ```sh
